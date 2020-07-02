@@ -29,12 +29,12 @@ export default {
   data(){
     return{
       topics:[
-        {title:'Introduction Web servers',group:'Week 1',available:true},
-        {title:'Web server functionalities ',group:'Week 1',available:true},
-        {title:'Introduction to Nginx',group:'Week 1',available:false},
-        {title:'Nginx vs Apache',group:'Week 1',available:false},
-        {title:'Nginx Features',group:'Week 1',available:false},
-        {title:'Over View of Nginx Config file',group:'Week 2',available:false},
+        {title:'Introduction Web servers',group:'Topic 1',available:true},
+        {title:'Web server functionalities ',group:'Topic 1.1',available:true},
+        {title:'Introduction to Nginx',group:'Topic 1.2',available:false},
+        {title:'Nginx vs Apache',group:'Topic 1.3',available:false},
+        {title:'Nginx Features',group:'Topic 1.4',available:false},
+        {title:'Over View of Nginx Config file',group:'Topic 2',available:false},
       ],
       availableClass: 'availableClass',
       notavailableClass: 'notavailableClass',
