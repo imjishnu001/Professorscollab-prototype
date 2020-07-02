@@ -5,8 +5,7 @@
             <span class="ml-5 white--text">Professors Collab</span>
             <v-spacer></v-spacer>
             <v-toolbar-title class="ml-5 white--text">
-                <span>Welcome: </span>
-                <span>Jishnu</span>
+                <span>Prototype</span>
             </v-toolbar-title> 
             
                
