@@ -13,7 +13,7 @@
           </v-card>
         </v-flex>
 
-        <v-flex xs12 sm6 md4 lg3>
+        <!--<v-flex xs12 sm6 md4 lg3>
           <v-card class="text-xs-center ma-3">
             <v-responsive class="pt-4">
               <v-img :aspect-ratio="4/4" src="../assets/logo.png"></v-img>
@@ -22,7 +22,7 @@
               <h1>Vue Js</h1>
             </v-card-text>
           </v-card>
-        </v-flex>
+        </v-flex>-->
       </v-layout>
     </v-container>
   </div>
