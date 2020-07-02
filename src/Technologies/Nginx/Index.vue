@@ -7,13 +7,13 @@
                   <div class="caption grey--text">
                     Group
                   </div>
-                  <h2 :class="[(topic.available) ? 'primary--text' : 'grey--text']">{{topic.group}}</h2>
+                  <h2 :class="[(topic.available) ? 'success--text' : 'grey--text']">{{topic.group}}</h2>
               </v-flex>
               <v-flex xs12 md4>
                   <div class="caption grey--text">
                     Title
                   </div>
-                  <h2 :class="[(topic.available) ? 'primary--text' : 'grey--text']">{{topic.title}}</h2>
+                  <h2 :class="[(topic.available) ? 'success--text' : 'grey--text']">{{topic.title}}</h2>
               </v-flex>
           </v-layout>
         <v-divider></v-divider>
