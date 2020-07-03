@@ -1,27 +1,28 @@
 <template>
   <div class="dashboard">
-    <v-container class="my-5">
-      <v-flex xs12 md12>
-          <v-layout row align-center justify-space-around>
+    <v-container>
+      <v-layout row justify-space-around>
+              <v-flex xs9 md3>
               <v-card v-for="student in students" v-bind:key="student.name" route v-bind:to="`/Students/${student.name}`">
                     <v-layout row :class="['pa-3', (student.marks > 7) ? passClass : failClass]">
-                        <v-flex xs12 md12>
+                        <v-flex xs12 md6>
                             <div class="caption grey--text">
                                 Student Name
                             </div>
                             <div>{{student.name}}</div>
                         </v-flex>
-                        <v-flex xs12 md12>
+                        <v-flex xs12 md6>
                             <div class="caption grey--text">
                                 Marks
                             </div>
                             <div>{{student.marks}}</div>
                         </v-flex>
+                      </v-layout>
+        
+                </v-card>
+                </v-flex>
           </v-layout>
-        <v-divider></v-divider>
-      </v-card>
-          </v-layout>
-      </v-flex>
+      
     </v-container>
   </div>
 </template>
