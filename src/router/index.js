@@ -7,6 +7,7 @@ import Students from '../views/Students.vue'
 import Subjects from '../views/Subjects.vue'
 import Nginx from '../Technologies/Nginx/Index.vue'
 import NginxContent from '../Technologies/Nginx/NginxContentent.vue'
+import Git from '../Technologies/Git/Git.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -45,7 +46,11 @@ Vue.use(VueRouter)
     name: 'NginxContent',
     component: NginxContent
   },
-  //{ path: '/Students/:id', component: Students },
+  {
+    path: '/Git',
+    name: 'Git',
+    component: Git
+  },
 ]
 
 const router = new VueRouter({
