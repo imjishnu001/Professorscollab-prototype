@@ -16,8 +16,8 @@
           <v-layout>
               <v-flex xs12 md10></v-flex>
               <v-flex xs12 md2>
-                  <v-btn class="primary" x-large route to="/NginxContent/2">
-                    Next chapter <v-icon>mdi-skip-next</v-icon>
+                  <v-btn class="primary" fab x-large route to="/NginxContent/2">
+                     <v-icon>mdi-skip-next</v-icon>
                   </v-btn>
               </v-flex>
           </v-layout>
@@ -53,14 +53,14 @@
           <v-container>
           <v-layout>
               <v-flex xs12 md2>
-                  <v-btn class="primary" large route to="/NginxContent/1">
-                    <v-icon>mdi-skip-previous</v-icon> Previous chapter
+                  <v-btn class="primary" fab large route to="/NginxContent/1">
+                    <v-icon>mdi-skip-previous</v-icon>
                   </v-btn>
               </v-flex>
               <v-flex xs12 md8></v-flex>
               <v-flex xs12 md2>
-                  <v-btn class="primary" large route to="/NginxContent/3">
-                    Next chapter <v-icon>mdi-skip-next</v-icon>
+                  <v-btn class="primary" fab large route to="/NginxContent/3">
+                    <v-icon>mdi-skip-next</v-icon>
                   </v-btn>
               </v-flex>
           </v-layout>
@@ -93,8 +93,8 @@
           <v-container>
           <v-layout>
               <v-flex xs12 md2>
-                  <v-btn class="primary" large route to="/NginxContent/2">
-                    <v-icon>mdi-skip-previous</v-icon> Previous chapter
+                  <v-btn class="primary" fab large route to="/NginxContent/2">
+                    <v-icon>mdi-skip-previous</v-icon> 
                   </v-btn>
               </v-flex>
               <v-flex xs12 md8></v-flex>
