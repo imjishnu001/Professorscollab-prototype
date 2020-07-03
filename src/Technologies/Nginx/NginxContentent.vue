@@ -1,6 +1,6 @@
 <template>
   <div> 
-        <v-btn x-large class="primary mt-15" fab fixed top right route to="/Nginx">
+        <v-btn small class="primary mt-15" fab fixed top right route to="/Nginx">
             <v-icon>mdi-home</v-icon>
         </v-btn><br/>
               
@@ -14,9 +14,9 @@
           </p>
           <v-container>
           <v-layout>
-              <v-flex xs12 md10></v-flex>
-              <v-flex xs12 md2>
-                  <v-btn class="primary" fab x-large route to="/NginxContent/2">
+              <v-flex xs9 md10></v-flex>
+              <v-flex xs2 md3>
+                  <v-btn right class="primary" fab x-large route to="/NginxContent/2">
                      <v-icon>mdi-skip-next</v-icon>
                   </v-btn>
               </v-flex>
@@ -51,14 +51,14 @@
             for more details about ports you can visit <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)" target="_blank">Port-wikipedia</a> page
           </p>
           <v-container>
-          <v-layout>
-              <v-flex xs12 md2>
+          <v-layout row wrap>
+              <v-flex xs2 md2>
                   <v-btn class="primary" fab large route to="/NginxContent/1">
                     <v-icon>mdi-skip-previous</v-icon>
                   </v-btn>
               </v-flex>
-              <v-flex xs12 md8></v-flex>
-              <v-flex xs12 md2>
+              <v-flex xs8 md7></v-flex>
+              <v-flex xs2 md2>
                   <v-btn class="primary" fab large route to="/NginxContent/3">
                     <v-icon>mdi-skip-next</v-icon>
                   </v-btn>
