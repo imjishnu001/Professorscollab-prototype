@@ -6,6 +6,7 @@ import Scores from '../views/Scores.vue'
 import Students from '../views/Students.vue'
 import Subjects from '../views/Subjects.vue'
 import Nginx from '../Technologies/Nginx/Index.vue'
+import NginxContent from '../Technologies/Nginx/NginxContentent.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -30,7 +31,7 @@ Vue.use(VueRouter)
     component: Scores
   },
   {
-    path: '/Students',
+    path: '/Students/:id',
     name: 'Students',
     component: Students
   },
@@ -39,7 +40,12 @@ Vue.use(VueRouter)
     name: 'Nginx',
     component: Nginx
   },
-  { path: '/Students/:id', component: Students },
+  {
+    path: '/NginxContent/:id',
+    name: 'NginxContent',
+    component: NginxContent
+  },
+  //{ path: '/Students/:id', component: Students },
 ]
 
 const router = new VueRouter({

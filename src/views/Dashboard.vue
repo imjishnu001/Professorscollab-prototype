@@ -2,7 +2,10 @@
   <div class="dashboard">
     <v-container>
       <v-layout row wrap>
-        <v-flex xs2 md8></v-flex>
+        <v-flex xs9 md2>
+          <h1 class="success--text">My Rank #12</h1>
+        </v-flex>
+        <v-flex xs2 md6></v-flex>
         <v-flex xs9 md4>
           <h1 class="primary--text">Total Points:{{getTotalPoints}}</h1>
         </v-flex>
