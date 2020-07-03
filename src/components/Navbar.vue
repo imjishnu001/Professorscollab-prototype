@@ -39,7 +39,7 @@ export default {
             links: [
                 {icon:'mdi-book',text:'Subjects',route:'/'},
                 {icon:'mdi-view-dashboard',text:'Dashboard',route:'/Dashboard'},
-                {icon:'mdi-account-tie',text:'Profile',route:'/Profile'},
+                //{icon:'mdi-account-tie',text:'Profile',route:'/Profile'},
             ]
         }
     }
