@@ -1,5 +1,8 @@
 <template>
     <div>
+       <v-btn large class="primary mt-15" fab fixed top right route to="/">
+            <v-icon>mdi-home</v-icon>
+        </v-btn><br/>
         <h1 class="grey--text ma-10">Introduction to Git and GitHub</h1>
         <p class="ma-10 font-weight-bold grey--text">
             Git and Github are two different entities, as we have established that fact let us try to understand how they are different but still co-dependent. Throughout this tutorial session we will try to understand what is Git and Github and how to use them for version control on your next project. This course only aims to get you introduced to the concepts and have a hands-on experience on the basics of version control. We will release a follow tutorial which will cover more advanced topics soon. Without any further ado, let's dive deep into the word of the version control system.
@@ -84,10 +87,16 @@
             <span class="display-1">6) git push </span><br/><br/>
             git push command is used to push the project to remote hosting, in this case Github.
             <v-img :aspect-ratio="15/3" src="gitPush.png" class="ma-5"></v-img><br/><br/>
-            Note: The term origin comes from where repository original situated and master stands for the main branch.
+            Note: The term origin comes from where repository original situated and master stands for the main branch.<br/><br/>
+            <span class="display-1">7) git clone and git pull </span><br/><br/>
+            We have learned how to push our project to Github now let's learn how to get the project on any other computer, from the GitHub portal you have the option to download the project as a zip file, but the better way would be to clone the project. On the machine where you would like to download your project install Git and run the git clone command and shown in the picture.  
+            <v-img :aspect-ratio="15/6" src="gitClone.png" class="ma-5"></v-img><br/><br/>
+            the command structure is:
+            git clone link folder<br/><br/>
+            we need the repository link that we created <a href="#repoLink">previously</a>, and you can name the folder anything.
 
-
-
+            Note: once the project is cloned in further if you push a update to Github, you can use the git pull command to get the updated project on the machine where project was cloned. Make sure that you are in the folder where you have cloned the project to make git pull work.
          </p>
+         <hr/>
     </div>
 </template>

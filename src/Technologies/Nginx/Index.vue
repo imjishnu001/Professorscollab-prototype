@@ -1,5 +1,8 @@
 <template>
   <div class="dashboard">
+    <v-btn large class="primary mt-15" fab fixed top right route to="/">
+            <v-icon>mdi-home</v-icon>
+        </v-btn><br/>
     <v-container class="my-5">
       <v-card v-for="topic in topics" v-bind:key="topic.title">
       <v-layout row wrap :class="['pa-3 topic', (topic.available) ? 'availableClass' : 'notavailableClass']" justify-center="">
