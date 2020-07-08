@@ -3,7 +3,7 @@
        <v-btn large class="primary mt-15" fab fixed top right route to="/">
             <v-icon>mdi-home</v-icon>
         </v-btn><br/>
-        <h1 class="grey--text ma-10">Introduction to Git and GitHub</h1>
+        <h1 class="grey--text ma-10">Introduction</h1>
         <p class="ma-10 font-weight-bold grey--text">
             Git and Github are two different entities, as we have established that fact let us try to understand how they are different but still co-dependent. Throughout this tutorial session we will try to understand what is Git and Github and how to use them for version control on your next project. This course only aims to get you introduced to the concepts and have a hands-on experience on the basics of version control. We will release a follow tutorial which will cover more advanced topics soon. Without any further ado, let's dive deep into the word of the version control system.
          </p>   
