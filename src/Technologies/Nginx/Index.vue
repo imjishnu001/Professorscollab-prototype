@@ -2,7 +2,7 @@
   <div class="dashboard">
     <v-container class="my-5">
       <v-card v-for="topic in topics" v-bind:key="topic.title">
-      <v-layout row wrap :class="['pa-3 topic', (topic.available) ? availableClass : notavailableClass]" justify-center="">
+      <v-layout row wrap :class="['pa-3 topic', (topic.available) ? 'availableClass' : 'notavailableClass']" justify-center="">
               <v-flex xs12 md3>
                   <h2 :class="[(topic.available) ? 'success--text' : 'grey--text']">{{topic.group}}</h2>
               </v-flex>
@@ -33,18 +33,17 @@ export default {
     return{
       topics:[
         {title:'Introduction Web servers',group:'Topic 1',available:true,route:'/1'},
-        {title:'Ports',group:'Topic 1.1',available:true,route:'/2'},
-        {title:'Sever functionalities',group:'Topic 1.2',available:true,route:'/3'},
-        {title:'Most used web server softwares',group:'Topic 1.3',available:false,route:'/4'},
-        {title:'Getting start with Nginx',group:'Topic 1.4',available:false,route:'/5'},
-        {title:'Installing Nginx',group:'Topic 2',available:false,route:'/6'},
-        {title:'Nginx Config Overview',group:'Topic 2.1',available:false,route:'/7'},
-        {title:'Nginx to serve static files',group:'Topic 2.2',available:false,route:'/8'},
-        {title:'Nginx internal routes',group:'Topic 2.3',available:false,route:'/9'},
-        {title:'Adding SSL with LetsEncrypt',group:'Topic 2.3',available:false,route:'/10'},
+        {title:'Ports',group:'Topic 2',available:true,route:'/2'},
+        {title:'Sever functionalities',group:'Topic 3',available:true,route:'/3'},
+        {title:'Most used web server software',group:'Topic 4',available:false,route:'/4'},
+        {title:'Getting start with Nginx',group:'Topic 5',available:false,route:'/5'},
+        {title:'Installing Nginx',group:'Topic 6',available:false,route:'/6'},
+        {title:'Nginx Config Overview',group:'Topic 7',available:false,route:'/7'},
+        {title:'Nginx Directives',group:'Topic 8',available:false,route:'/8'},
+        {title:'Nginx to serve static files',group:'Topic 9',available:false,route:'/9'},
+        {title:'Nginx internal routes',group:'Topic 10',available:false,route:'/10'},
+        {title:'Adding SSL with LetsEncrypt',group:'Bonus',available:false,route:'/11'},
       ],
-      availableClass: 'availableClass',
-      notavailableClass: 'notavailableClass',
     }
   },  
 }

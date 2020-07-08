@@ -5,7 +5,7 @@
             <span class="ml-5 white--text">Professors Collab</span>
             <v-spacer></v-spacer>
             <v-toolbar-title class="ml-5 white--text">
-                <span>Prototype</span>
+                <span>Early Access</span>
             </v-toolbar-title> 
             
                
@@ -19,7 +19,7 @@
           </v-col>
         </v-row>
       </v-img>
-            <v-list-item v-for="link in links" :key="link" route :to="link.route">
+            <v-list-item v-for="link in links" :key="link" route :to="link.route" class="mt-5">
                 <v-list-item-icon>
                     <v-icon class="white--text">{{link.icon}}</v-icon>
                 </v-list-item-icon>
@@ -38,7 +38,7 @@ export default {
             drawer: false,
             links: [
                 {icon:'mdi-book',text:'Subjects',route:'/'},
-                {icon:'mdi-view-dashboard',text:'Dashboard',route:'/Dashboard'},
+                //{icon:'mdi-view-dashboard',text:'Dashboard',route:'/Dashboard'},
                 //{icon:'mdi-account-tie',text:'Profile',route:'/Profile'},
             ]
         }
