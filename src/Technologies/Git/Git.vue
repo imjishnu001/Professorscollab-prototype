@@ -1,8 +1,36 @@
 <template>
     <div>
-       <v-btn large class="primary mt-15" fab fixed top right route to="/">
+       <v-btn xs12 md6 class="primary mt-15" fab fixed top right route to="/">
             <v-icon>mdi-home</v-icon>
-        </v-btn><br/>
+        </v-btn><br/><br/><br/>
+        <!--Video Tutorial-->
+
+         <v-row justify="center">
+            <v-dialog v-model="dialog" persistent max-width="790">
+               <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                     color="primary"
+                     dark
+                     v-bind="attrs"
+                     v-on="on"
+                  >
+                  Launch Video Tutorial
+                  </v-btn>
+               </template>
+               <v-card>
+                  <video width="100%" height="100%" controls>
+                     <source src="GitTest.mp4" type="video/mp4">
+                     <source src="movie.ogg" type="video/ogg">
+                     Your browser does not support the video tag.
+                  </video>
+                  <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary darken-1" @click="dialog = false">Close</v-btn>
+               </v-card-actions>
+               </v-card>
+            </v-dialog>
+         </v-row>
+        <!--Video Tutorial-->
         <h1 class="grey--text ma-10">Introduction</h1>
         <p class="ma-10 font-weight-bold grey--text">
             Git and Github are two different entities, as we have established that fact let us try to understand how they are different but still co-dependent. Throughout this tutorial session we will try to understand what is Git and Github and how to use them for version control on your next project. This course only aims to get you introduced to the concepts and have a hands-on experience on the basics of version control. We will release a follow tutorial which will cover more advanced topics soon. Without any further ado, let's dive deep into the word of the version control system.
@@ -100,3 +128,13 @@
          <hr/>
     </div>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        dialog: false,
+      }
+    },
+  }
+</script>
