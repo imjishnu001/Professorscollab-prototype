@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100%;
+        }
+        .fle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        button{
+            height: 100px;
+            width: 100px;
+            color: white;
+            font-size: 50px;
+            border-bottom: 3px solid black; 
+            background-image: linear-gradient(grey,black);
+            border-right: 0;
+            border-left: 0;   
+        }
+        
+        button:hover{
+            background-image: linear-gradient(black,grey);
+            color: grey;
+        }
+        span{
+            font-size: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <span id="win"></span>
+    <div class="fle">
+    <table>
+        <tr>
+            <td>
+                <button class="bt" id="cell1" onclick="checkTurn(0,'cell1')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell2" onclick="checkTurn(1,'cell2')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell3" onclick="checkTurn(2,'cell3')"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="bt" id="cell4" onclick="checkTurn(3,'cell4')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell5" onclick="checkTurn(4,'cell5')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell6" onclick="checkTurn(5,'cell6')"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="bt" id="cell7" onclick="checkTurn(6,'cell7')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell8" onclick="checkTurn(7,'cell8')"></button>
+            </td>
+            <td>
+                <button class="bt" id="cell9" onclick="checkTurn(8,'cell9')"></button>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

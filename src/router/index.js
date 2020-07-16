@@ -8,6 +8,7 @@ import Subjects from '../views/Subjects.vue'
 import Nginx from '../Technologies/Nginx/Index.vue'
 import NginxContent from '../Technologies/Nginx/NginxContentent.vue'
 import Git from '../Technologies/Git/Git.vue'
+import SimpleWebGame from '../Technologies/SimpleWebGame/Index.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -50,6 +51,11 @@ Vue.use(VueRouter)
     path: '/Git',
     name: 'Git',
     component: Git
+  },
+  {
+    path: '/SimpleWebGame',
+    name: 'SimpleWebGame',
+    component: SimpleWebGame
   },
 ]
 
