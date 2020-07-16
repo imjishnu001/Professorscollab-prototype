@@ -41,7 +41,7 @@
         This course aims to introduce the fundamentals of the client-side aspect of web development using Javascript by developing a simple tic tac toe game, We will have a follow-up course that will take you through the fundamentals of web UI designing.
       </p>
       <h1 class="grey--text">
-        The Basic Layout (index.html)
+        The Basic Layout
       </h1>
       <p class="grey--text ma-5">
         This course aims to introduce the fundamentals of the client-side aspect of web development using Javascript by developing a simple tic tac toe game, We will have a follow-up course that will take you through the fundamentals of web UI designing.
@@ -57,7 +57,7 @@
           The above code has a simple table that contains, three rows, each row contains three buttons, which form the layout of our game board. Each button contains a unique id which represents the position of the button on the board, the id starts from 0 because we will use an array to store data in the game logic and array index starts from 0. each button also has a class bt which will be used later to group the buttons, buttons also have a onclick event which calls checkTurn function and passes a number as a function argument, the number just like id represents the position of the button in the game board which will be used to manipulate the button value and state. 
         </p>
         <h1 class="grey--text">
-        Game Logic (script.js)
+        Game Logic 
         </h1>
         <h3 class="grey--text ma-5">
             Note: place all the below mentioned code between &lt;script&gt; and &lt;/script&gt; tag for the web broswer to execute the Javascript code 
@@ -137,23 +137,23 @@
           <br/><h2 class="text-center">  Function to check game win </h2><br/>
           <pre>
             function winCheck(){
-              for(i =0 ; i &lt;=7; i++){             //winConditions have 8 sub array, index starts from 0
-                  condition = conditions[i];  //Declaring new array to store each sub array of winConditions.
-                  box1 = gameBoard[condition[0]]; //storing value from winConditions sub array position 1
-                  box2 = gameBoard[condition[1]]; //storing value from winConditions sub array position 2
-                  box3 = gameBoard[condition[2]]; //storing value from winConditions sub array position 3
-                  if(box1 == '' || box2 == '' || box3 == ''){
-                      continue;                   //If any of the position is empty, the current iteration will be skipped 
-                  }
-                  if(box1 === box2 && bx2 === box3){
-                    return  winCount(box1)            //Function call for winCount if any winCondition is matched
+                    for(i =0 ; i  &lt;=7; i++){             //winConditions have 8 sub array, index starts from 0
+                    let condition = winConditions[i];  //Declaring new array to store each sub array of winConditions.
+                    box1 = gameBoard[condition[0]]; //storing value from winConditions sub array position 1
+                    box2 = gameBoard[condition[1]]; //storing value from winConditions sub array position 2
+                    box3 = gameBoard[condition[2]]; //storing value from winConditions sub array position 3
+                    if(box1 == '' || box2 == '' || box3 == ''){
+                        continue;                   //If any of the position is empty, the current iteration will be skipped 
+                    }
+                    if(box1 === box2 && box2 === box3){
+                      return  winCount(box1)            //Function call for winCount if any winCondition is matched
+                    }
                   }
                   if(tracker > 9){                    //If tracker reaches 10 that means the match is a Draw
-                    alert("Draw")                     //Pop up stating match Draw
-                    restart();                         //Function call to restart the game
+                      alert("Draw")                     //Pop up stating match Draw
+                      restart();                         //Function call to restart the game
                   }
               }
-            }
           </pre>
         </div>
         <p class="grey--text ma-5"> winCheck might look a bit complicated at first glance, but its quite simple once you understand how the 3d array works. Lets have a better understanding of winConditions before we start.<br/> <br/> [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]<br/> Now if you observe every sub array and compare it with the below display mentioned picture, you will have a better understanding of what these numbers represent.<br/> We are using these sub-arrays to hold index, for example, let's say 0,1,2 all this index in gameBoard array has x then player x wins because the player has 3 consecutive values horizontally, another example could be, if 0,4,8 all these index in gameBoard array have x then, x wins as player has 3 consecutive values diagonally. <br/> We are looping 7 times as the index starts from 0, 0-7 is total of 8, and and if check the winConditions we have 8 sub array or in other words 8 winning conditions. <v-responsive class="pt-4"> <v-img :aspect-ratio="16/8" src="/TicTacToe.png"></v-img> </v-responsive><br/><br/> Now that we have a better understanding of why we are using winConditions, let's understand how we will be implementing winConditions.<br/> Inside the loop we are defining a new variable named condition, this will be used to store sub array of winConditions, for example<br/><br/> in first iteration i = 0;<br/> winConditions[i] is [0,1,2]<br/> condition = winConditions[i] is [0,1,2] <br/> condition[0] is 0, condition[1] is 1 and condition[2] is 2.<br/><br/> now lets consider we are in middle of game, our gameBoard array might look something like this<br/><br/> ['x','','o','x','','o','x','','']<br/><br/> also consider we are in 4th iteration in our current loop so our condition value is [0,3,6]<br/><br/> box1 = gameBoard[condition[0]] // which stands for gameBoard[0], 0th index in above gameBoard array holds x, so the value of box1 will be x.<br/><br/> box2 = gameBoard[condition[1]] // which stands for gameBoard[3], 1st index in above gameBoard array holds x, so the value of box2 will be x.<br/><br/> box3 = gameBoard[condition[2]] // which stands for gameBoard[2], 2nd index in above gameBoard array holds x, so the value of box3 will be x.<br/><br/> In this case box1 == box2 && box2 == box3 is true as all boxes hold x, so winCount function will be triggered with x as argument. We are also checking if an of the position in sub-array index is empty in such case we skip to next iteration as we need all the boxes to have value to win.<br/><br/> If the tracker value is greater than 9 that indicates that all buttons have been pressed and no player won, which means that match is a draw, in that case we show the same in alert and call the restart function.</p>
@@ -183,7 +183,8 @@
           <pre>
             function restart(){
                 gameBoard = ['','','','','','','','',''];              // Resetting gameBoard to empty array
-                turn = 'x';                                           //Initializing turn 
+                turn = 'x'; 
+                tracker = 0;                                          //Initializing turn 
                 let buttons = document.getElementsByClassName("bt");  // Declaring array to store all elements with the bt class 
                 Array.from(buttons).forEach(button =>{               //Looping through all elements with bt class
                     button.disabled=false;                          //Enabling the button
@@ -200,6 +201,88 @@
             and finally we are using document.getElementById('win') to display how many times X and O won.<br/><br/>
             Note: win is an id given to h1 tag in the HTML section.
         </p>
+        <div style="border:1px solid black; overflow:auto;background-color:#2e2e1f" class="white--text">
+          <pre>
+            <h1 class="text-center"> Final Code (save as index.html)</h1>
+            {{code}}
+            &lt;script&gt;
+              let gameBoard = ['','','','','','','','','']; //Array to keep track of x and o positions
+              let xWin = 0; //Used to track the number of times X won
+              let oWin = 0; //Used to track the number of times O won
+              let tracker = 0; // Used to identify draw games
+              let winConditions = [
+              [0,1,2],
+              [3,4,5],
+              [6,7,8],
+              [0,3,6],
+              [1,4,7],
+              [2,5,8],
+              [0,4,8],
+              [2,4,6]
+              ]; //All possible winning conditions.
+              let condition = []; // Used to store conditions in loop
+              let turn  = 'x' // Used to keep track of player turn
+              function checkTurn(position){ 
+                  if(turn === 'x'){  
+                      gameBoard[position] = 'x';                        // Storing x in position 
+                      document.getElementById(position).innerHTML='x';  // Displaying X in the box 
+                      document.getElementById(position).disabled=true;  //Disabling the button 
+                      turn= 'o';                                        //Changing Turn 
+                      tracker++;                                        //Incrementing tracker to track draw
+                  }else{
+                      gameBoard[position] = 'o';                        // Storing x in position
+                      document.getElementById(position).innerHTML='o';  // Displaying O in the box 
+                      document.getElementById(position).disabled=true;  //Disabling the button 
+                      turn= 'x';                                        //Changing Turn
+                      tracker++;                                        //Incrementing tracker to track draw
+                  }    
+                  winCheck();                                           //Function call to check game win
+                }
+                function winCheck(){
+                    for(i =0 ; i  &lt;=7; i++){             //winConditions have 8 sub array, index starts from 0
+                    let condition = winConditions[i];  //Declaring new array to store each sub array of winConditions.
+                    box1 = gameBoard[condition[0]]; //storing value from winConditions sub array position 1
+                    box2 = gameBoard[condition[1]]; //storing value from winConditions sub array position 2
+                    box3 = gameBoard[condition[2]]; //storing value from winConditions sub array position 3
+                    if(box1 == '' || box2 == '' || box3 == ''){
+                        continue;                   //If any of the position is empty, the current iteration will be skipped 
+                    }
+                    if(box1 === box2 && box2 === box3){
+                      return  winCount(box1)            //Function call for winCount if any winCondition is matched
+                    }
+                }
+                if(tracker > 9){                    //If tracker reaches 10 that means the match is a Draw
+                      alert("Draw")                     //Pop up stating match Draw
+                      restart();                         //Function call to restart the game
+                }
+              }
+              function winCount(player){   //Win count accepts winning character as parameter i.e X or O  
+                if(player === 'x'){        //If parameter is x
+                    xWin++;             //Incrementing X win count
+                    alert(player+" Wins"); //Pop up stating X wins
+                    restart()           //Function call to restart the game
+                }else if(player === 'o'){  //If parameter is o
+                    oWin++;             //Incrementing O win count
+                    alert(player+" Wins"); //Pop up stating O wins
+                    restart();          //Function call to restart the game
+                }
+            }
+            function restart(){
+                gameBoard = ['','','','','','','','',''];              // Resetting gameBoard to empty array
+                turn = 'x';                                            //Initializing turn 
+                tracker = 0;
+                let buttons = document.getElementsByClassName("bt");  // Declaring array to store all elements with the bt class 
+                Array.from(buttons).forEach(button =>{               //Looping through all elements with bt class
+                    button.disabled=false;                          //Enabling the button
+                    button.innerHTML = ''                           //Removing the value from button
+                });
+                document.getElementById('win').innerHTML ="X : "+ xWin+"  O : "+ oWin; // Displaying total wins for X and O
+            } 
+            &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </pre>
+        </div>
       </v-container>
       <h1 class="grey--text text-center">The End</h1>
   </div>
@@ -228,6 +311,18 @@ export default {
     condition: [],
     turn: 'x',
     code: `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        button{ /*Basic style for buttons*/
+          height:100px;
+          width:100px;
+          font-size:30px;
+        }
+      </style>
+    </head>
+    <body>
     <table>
         <tr>
             <td>
