@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard">
+    {{visitor()}}
     <v-btn large class="primary mt-15" fab fixed top right route to="/">
             <v-icon>mdi-home</v-icon>
         </v-btn><br/>
@@ -48,7 +49,26 @@ export default {
         {title:'Adding SSL with LetsEncrypt',group:'Bonus',available:false,route:'/11'},
       ],
     }
-  },  
+  }, 
+  methods:{
+    visitor: function(){
+      let dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+      let visitor = window.location.href.toString().slice(7).slice(0,-1);
+      let page = this.$route.name;
+       fetch('https://professorscollab.xyz:8443/api/visitor',{
+        method:'POST',
+        body: JSON.stringify({ 
+        visitor: visitor, 
+        page: page, 
+        dateTime: dateTime 
+        }), 
+        headers: { 
+            "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      return; 
+    }
+  }
 }
 </script>
 

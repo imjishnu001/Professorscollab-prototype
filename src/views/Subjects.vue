@@ -60,7 +60,7 @@ export default{
       let dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
       let visitor = window.location.href.toString().slice(7).slice(0,-1);
       let page = this.$route.name;
-       fetch('http://professorscollab.xyz:3004/api/visitor',{
+       fetch('https://professorscollab.xyz:8443/api/visitor',{
         method:'POST',
         body: JSON.stringify({ 
         visitor: visitor, 
