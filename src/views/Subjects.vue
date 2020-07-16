@@ -1,5 +1,6 @@
 <template>
   <div class="subjects">
+    {{visitor()}}
     <h1 class="grey--text ma-5">
       Set - 1 : Introduction to Web " Deployment "<br/>
     </h1>
@@ -47,6 +48,34 @@
   </div>
 </template>
 
+<script> 
+export default{
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    visitor: function(){
+      let dateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+      let visitor = window.location.href.toString().slice(7).slice(0,-1);
+      let page = this.$route.name;
+       fetch('http://professorscollab.xyz:3004/api/visitor',{
+        method:'POST',
+        body: JSON.stringify({ 
+        visitor: visitor, 
+        page: page, 
+        dateTime: dateTime 
+        }), 
+        headers: { 
+            "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      return; 
+    }
+  }
+}
+</script>
 <style scoped>
 hr{
   color: gray;
